@@ -1,0 +1,48 @@
+#header-nav {
+  border-radius: 0;
+  border: 0;
+}
+.navbar-brand h1 { /* Restaurant name */
+  font-size: 1.5em;
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+#nav-list {
+  margin-top: 10px;
+}
+#nav-list a {
+  color: #951C49;
+  background-color: #F8F8FF;
+  text-align: center;
+}
+#nav-list a:hover {
+  background: #E7E7E7;
+}
+#nav-list a span {
+  font-size: 1.8em;
+}
+#main-title {
+  margin-top: 5px;
+  font-size: 2em;
+  letter-spacing: .1em;
+  font-weight: bold;
+}
+#p1{
+  font-weight: bold;
+}
+.container .jumbotron {
+  margin-top: 30px;
+  padding: 5px;
+  border-radius: 0;
+  min-height: 1000px;
+}
+.container .jumbotron .section {
+  margin: auto;
+}

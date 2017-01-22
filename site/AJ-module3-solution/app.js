@@ -62,9 +62,7 @@ function MenuSearchService($http, ApiBasePath) {
       };
     };
     return foundItems;
-  }).catch(function (error) {
-            console.log(error);
-          });
+  })
 };
 
 }

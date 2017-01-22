@@ -18,8 +18,8 @@
     <div class="form-group narrow-button">
       <button class="btn btn-primary" ng-click="narrow.get();">Narrow It Down For Me!</button>
     </div>
-    <li ng-repeat="item in narrow.found">
-    {{ item }} 
+    <li ng-model="narrow.found">
+    {{ narrow.found }} 
     <button ng-click="narrow.onRemove({index: $index});">Remove Item</button>
   </li>
 

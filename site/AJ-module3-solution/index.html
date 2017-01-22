@@ -18,6 +18,10 @@
     <div class="form-group narrow-button">
       <button class="btn btn-primary" ng-click="narrow.get();">Narrow It Down For Me!</button>
     </div>
+    <li> ng-repeat="item in narrow.found">
+    {{ item }} 
+    <button ng-click="narrow.onRemove({index: $index});">Remove Item</button>
+  </li>
 
     <!-- found-items should be implemented as a component -->
     <found-items items="narrow.found" on-remove="narrow.removeItem(index)"></found-items>

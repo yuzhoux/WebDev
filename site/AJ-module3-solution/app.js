@@ -33,7 +33,6 @@ function NarrowItDownController(MenuSearchService) {
 
   promise.then(function (response) {
     menu.found=response;
-    console.log(response);
   })
   .catch(function (error) {
     console.log("Something went terribly wrong.");

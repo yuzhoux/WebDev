@@ -12,10 +12,12 @@ function FoundItemsDirective() {
   var ddo = {
     templateUrl: 'listItem.html',
     scope: {
-      restrict: 'AE',
-      found: '<',
+      items: '<',
       onRemove: '&'
-    }
+    },
+    controller: NarrowItDownController,
+    controllerAs: 'narrow',
+    bindToController: true
   };
   return ddo;
 }
@@ -37,18 +39,9 @@ function NarrowItDownController(MenuSearchService) {
     console.log("Something went terribly wrong.");
   })
   };
-
-
-  // menu.logMenuItems = function (shortName) {
-  //   var promise = MenuSearchService.getMenuForCategory(shortName);
-
-  //   promise.then(function (response) {
-  //     console.log(response.data);
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   })
-  // };
+  menu.removeItem = function (itemIndex) {
+    menu.found.splice(itemIndex, 1);
+  };
 
 }
 
@@ -56,26 +49,6 @@ function NarrowItDownController(MenuSearchService) {
 MenuSearchService.$inject = ['$http', 'ApiBasePath'];
 function MenuSearchService($http, ApiBasePath) {
   var service = this;
-  // service.getMenuCategories = function () {
-  //   var response = $http({
-  //     method: "GET",
-  //     url: (ApiBasePath + "/categories.json")
-  //   });
-
-  //   return response;
-  // };
-
-
-  // service.getMenuForCategory = function (shortName) {
-  //   var response = $http({
-  //     method: "GET",
-  //     url: (ApiBasePath + "/menu_items.json"),
-  //     params: {
-  //       category: shortName
-  //     }
-  //   });
-  //   return response;
-  // };
 
   service.getMatchedMenuItems= function (searchTerm){
     return $http({
@@ -89,11 +62,10 @@ function MenuSearchService($http, ApiBasePath) {
       };
     };
     return foundItems;
-  });
+  }).catch(function (error) {
+            console.log(error);
+          });
 };
-  service.removeItem = function (itemIndex) {
-    found.splice(itemIndex, 1);
-  };
 
 }
 

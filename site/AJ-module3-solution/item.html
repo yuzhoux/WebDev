@@ -1,5 +1,5 @@
  <ol>
-  <li ng-repeat="item in narrow.found">
+  <li ng-repeat="item in narrow.found" class="ng-binding ng-scope">
     {{ item }} 
     <button ng-click="narrow.onRemove({index: $index});">Remove Item</button>
   </li>

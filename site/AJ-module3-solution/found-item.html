@@ -1,6 +1,13 @@
- <ol>
+<!--  <ol>
   <li ng-repeat="item in narrow.found" >
     {{ item }} 
     <button ng-click="narrow.onRemove({index: $index});">Remove Item</button>
   </li>
-</ol>
+</ol> -->
+
+<table>
+	<tbody>
+		<tr ng-repeat="item in narrow.found" class="ng-scope"></tr>
+	</tbody>
+
+</table>

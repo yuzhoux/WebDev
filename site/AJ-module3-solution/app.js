@@ -10,7 +10,7 @@ angular.module('NarrowItDownApp', [])
 
 function FoundItemsDirective() {
   var ddo = {
-    templateUrl: 'item.html',
+    templateUrl: 'found-item.html',
     scope: {
       items: '<',
       onRemove: '&'

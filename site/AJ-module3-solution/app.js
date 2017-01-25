@@ -10,14 +10,14 @@ angular.module('NarrowItDownApp', [])
 
 function FoundItemsDirective() {
   var ddo = {
-    templateUrl: 'item.html',
     scope: {
       items: '<',
       onRemove: '&'
     },
-    controller: NarrowItDownController,
-    controllerAs: 'narrow',
-    bindToController: true
+    // controller: NarrowItDownController,
+    // controllerAs: 'narrow',
+    // bindToController: true,
+    templateUrl: 'item.html'
   };
   return ddo;
 }
